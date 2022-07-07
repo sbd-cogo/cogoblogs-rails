@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
     end
 
     def singleBlog
-        blog = Blogs.find(params[:blog_id])
+        blog = Blogs.find(params[:id])
         render json: blog
     end
 
