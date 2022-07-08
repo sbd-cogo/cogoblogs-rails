@@ -30,6 +30,8 @@ class BlogsController < ApplicationController
         blog = Blogs.find(params[:id])
         blog.blog_title = params[:blog_title]
         blog.blog_desc = params[:blog_desc]
+        blog.blog_content = params[:blog_content]
+        blog.blog_type = params[:blog_type]
         blog.save
         render json: blog
     end
