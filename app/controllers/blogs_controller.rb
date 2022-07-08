@@ -20,4 +20,17 @@ class BlogsController < ApplicationController
         new_blog.save
         render json: new_blog
     end
+
+    def deleteBlog
+        @blog = Blogs.find(params[:id])
+        @blog.destroy
+    end
+
+    def editBlog
+        blog = Blogs.find(params[:id])
+        blog.blog_title = params[:blog_title]
+        blog.blog_desc = params[:blog_desc]
+        blog.save
+        render json: blog
+    end
 end

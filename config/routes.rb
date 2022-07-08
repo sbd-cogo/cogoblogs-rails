@@ -5,8 +5,13 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/blogs", to: "blogs#showBlogs"
   get "/blogs/ids/:id", to: "blogs#singleBlog"
-
+  
+  put "blogs/edit/:id", to: "blogs#editBlog"
+  
+  post "/blogs/delete/:id", to: "blogs#deleteBlog"
   post "/blogs", to: "blogs#createBlog"
+  
+  
   
 
 end
